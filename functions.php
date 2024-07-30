@@ -13,7 +13,7 @@ if( ! defined( 'NINTYNINE_DIR_URI' ) ){
 }
 
 require_once NINTYNINE_DIR_PATH . '/inc/helpers/autoloader.php';
-
+require_once NINTYNINE_DIR_PATH . '/inc/helpers/template-tags.php';
 function nintynine_get_theme_instance() {
 \NINTYNINE_THEME\Inc\NINTYNINE_THEME::get_instance();
 }
