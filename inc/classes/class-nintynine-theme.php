@@ -19,6 +19,7 @@ class NINTYNINE_THEME {
         Menus::get_instance();
         Meta_Boxes::get_instance();
         Sidebars::get_instance();
+        Block_Patterns::get_instance();
 
         $this->setup_hooks();
     }
@@ -70,9 +71,11 @@ class NINTYNINE_THEME {
             ] 
         );
 
-        add_editor_style();
         add_theme_support( 'wp-block-styles' );
         add_theme_support( 'align-wide' );
+        add_theme_support( 'editor-styles' );
+        add_editor_style( 'assets/build/css/editor.css' );
+        remove_theme_support( 'core-block-patterns' );
 
         global $content_width;
         if( ! isset( $content_width ) ) {
