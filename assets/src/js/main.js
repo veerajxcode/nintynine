@@ -4,4 +4,5 @@ import './clock';
 import '../sass/main.scss';
 
 //Images.
-import '../img/cat.jpg'
+import '../img/cat.jpg';
+import '../img/patterns/cover.jpg';

@@ -2,7 +2,7 @@
 /**
  * Block Patterns
  *
- * @package Aquila
+ * @package NintyNine
  */
 
 namespace NINTYNINE_THEME\Inc;

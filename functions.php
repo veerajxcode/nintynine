@@ -16,6 +16,10 @@ if( ! defined( 'NINTYNINE_BUILD_URI' ) ){
    define( 'NINTYNINE_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build' );
 }
 
+if( ! defined( 'NINTYNINE_BUILD_PATH' ) ){
+   define( 'NINTYNINE_BUILD_PATH', untrailingslashit( get_template_directory() ) . '/assets/build' );
+}
+
 if( ! defined( 'NINTYNINE_BUILD_JS_URI' ) ){
    define( 'NINTYNINE_BUILD_JS_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build/js' );
 }

@@ -2,13 +2,13 @@
 /**
  * Two Columns Block Patterns Template
  *
- * @package aquila
+ * @package NintnNine
  */
 
 ?>
 
-<!-- wp:group {"align":"wide","className":"aquila-two-columns-pattern","backgroundColor":"black","textColor":"cyan-bluish-gray"} -->
-<div class="wp-block-group alignwide aquila-two-columns-pattern has-cyan-bluish-gray-color has-black-background-color has-text-color has-background"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+<!-- wp:group {"align":"wide","className":"nintynine-two-columns-pattern","backgroundColor":"black","textColor":"cyan-bluish-gray"} -->
+<div class="wp-block-group alignwide nintynine-two-columns-pattern has-cyan-bluish-gray-color has-black-background-color has-text-color has-background"><div class="wp-block-group__inner-container"><!-- wp:columns -->
 		<div class="wp-block-columns"><!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:heading {"textColor":"luminous-vivid-amber"} -->
 				<h2 class="has-luminous-vivid-amber-color has-text-color">Heading One</h2>
