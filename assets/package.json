@@ -51,6 +51,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@wordpress/babel-preset-default": "^8.5.0",
     "sass": "^1.77.8"
   }
 }
