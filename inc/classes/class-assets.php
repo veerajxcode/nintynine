@@ -51,7 +51,7 @@ class Assets {
 
     public function enqueue_editor_assets() {
         
-        $asset_config_file = sprintf( '%s/assets.php', AQUILA_BUILD_PATH );
+        $asset_config_file = sprintf( '%s/assets.php', NINTYNINE_BUILD_PATH );
 
 		if ( ! file_exists( $asset_config_file ) ) {
 			return;
@@ -70,8 +70,8 @@ class Assets {
         // Theme Gutenberg blocks JS.
 		if ( is_admin() ) {
 			wp_enqueue_script(
-				'aquila-blocks-js',
-				AQUILA_BUILD_JS_URI . '/blocks.js',
+				'nintynine-blocks-js',
+				NINTYNINE_BUILD_JS_URI . '/blocks.js',
 				$js_dependencies,
 				$version,
 				true
@@ -85,10 +85,10 @@ class Assets {
 		];
 
 		wp_enqueue_style(
-			'aquila-blocks-css',
-			AQUILA_BUILD_CSS_URI . '/blocks.css',
+			'nintynine-blocks-css',
+			NINTYNINE_BUILD_CSS_URI . '/blocks.css',
 			$css_dependencies,
-			filemtime( AQUILA_BUILD_CSS_DIR_PATH . '/blocks.css' ),
+			filemtime( NINTYNINE_BUILD_CSS_DIR_PATH . '/blocks.css' ),
 			'all'
 		);
 

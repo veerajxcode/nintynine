@@ -20,6 +20,25 @@ const output = {
     path: BUILD_DIR,
     filename: 'js/[name].js'
 };
+
+/**
+ * Note: argv.node will return 'development' or 'production'.
+ */
+const plugins = ( argv ) => [
+    new CleanWebpackPlugin({
+        cleanStaleWebpackAssets: ( 'production' === argv.mode )
+    }),
+
+    new MiniCssExtractPlugin({
+        filename: 'css/[name].css'
+    }),
+
+    new DependencyExtractionWebpackPlugin({
+        injectPolyfill: true,
+        combineAssets: true
+    })
+];
+
 const rules = [
     {
         test: /\.js$/,
@@ -44,21 +63,6 @@ const rules = [
             },
         ],
     },
-];
-
-const plugins = ( argv ) => [
-    new CleanWebpackPlugin({
-        cleanStaleWebpackAssets: ( 'production' === argv.mode )
-    }),
-
-    new MiniCssExtractPlugin({
-        filename: 'css/[name].css'
-    }),
-
-    new DependencyExtractionWebpackPlugin({
-        injectPolyfill: true,
-        combineAssets: true
-    })
 ];
 
 module.exports = ( env, argv ) => ({

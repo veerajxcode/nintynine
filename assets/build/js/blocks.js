@@ -21,25 +21,87 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/**
+ * Heading with Icon block.
+ *
+ * @package
+ */
+
+//import { getIconComponent } from './icons-map';
+
+/**
+ * Internal dependencies.
+ */
+//import Edit from './edit';
+//import Save from './save';
+
+/**
+ * WordPress Dependencies.
+ */
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)( 'nintynine-blocks/heading', {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)( 'Heading with Icon', 'nintynine' ),
-    icon: 'admin-customizer',
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)( 'Add heading and select icon', 'nintynine' ),
-    category: 'nintynine',
-    edit() {
-        return 'Hello World, step 1';
-    },
-    save() {
-        return 'Hello World, step 1';
-    },
+
+/**
+ * Register block type.
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)( 'nintynine-blocks/heading', {
+	/**
+	 * Block title.
+	 *
+	 * @type {string}
+	 */
+	title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)( 'Heading with Icon', 'nintynine' ),
+
+	/**
+	 * Block icon.
+	 *
+	 * @type {string}
+	 */
+	icon: 'admin-customizer',
+
+	/**
+	 * Block description.
+	 *
+	 * @type {string}
+	 */
+	description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)( 'Add Heading and select Icons', 'nintynine' ),
+
+	/**
+	 * Block category.
+	 *
+	 * @type {string}
+	 */
+	category: 'nintynine',
+
+	/**
+	 * Attributes.
+	 */
+	
+
+	edit() {
+		return '<div>Hello there</div>';
+	},
+	save() {
+		return '<div>Hello there2</div>';
+	},
 } );
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
 
