@@ -27,15 +27,18 @@ class Blocks {
     public function add_block_categories( $categories ) {
         $categories_slugs = wp_list_pluck( $categories, 'slug' );
 
-        return  in_array( 'nintynine', $categories_slugs, true ) ? $categories : array_merge( $categories, 
+        return in_array( 'nintynine', $categories_slugs, true ) ? $categories : 
+        array_merge( 
+            $categories, 
             [
-                [ 
+                [
                     'slug' => 'nintynine', 
                     'title' => __( 'NintyNine Blocks', 'nintynine' ), 
                     'icon' => 'table-row-after' 
                 ]
             ]
         );
+
     }
    
 }

@@ -2,6 +2,42 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/gutenberg/blocks/heading-with-icon/index.js":
+/*!************************************************************!*\
+  !*** ./src/js/gutenberg/blocks/heading-with-icon/index.js ***!
+  \************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * Heading with Icon block.
+ *
+ * @package
+ */
+
+
+
+/**
+ * Register block type.
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('nintynine-blocks/heading-with-icon', {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading with Icon', 'nintynine'),
+  icon: 'admin-customizer',
+  category: 'nintynine',
+  edit: function edit() {
+    return /*#__PURE__*/React.createElement("div", null, "Hello there");
+  },
+  save: function save() {
+    return /*#__PURE__*/React.createElement("div", null, "Hello there2");
+  }
+});
+
+/***/ }),
+
 /***/ "./src/sass/blocks.scss":
 /*!******************************!*\
   !*** ./src/sass/blocks.scss ***!
@@ -11,85 +47,6 @@
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "./src/gutenberg/blocks/heading-with-icon/index.js":
-/*!*********************************************************!*\
-  !*** ./src/gutenberg/blocks/heading-with-icon/index.js ***!
-  \*********************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/**
- * Heading with Icon block.
- *
- * @package
- */
-
-//import { getIconComponent } from './icons-map';
-
-/**
- * Internal dependencies.
- */
-//import Edit from './edit';
-//import Save from './save';
-
-/**
- * WordPress Dependencies.
- */
-
-
-//import { RichText } from '@wordpress/block-editor';
-
-/**
- * Register block type.
- */
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)( 'nintynine-blocks/heading', {
-	/**
-	 * Block title.
-	 *
-	 * @type {string}
-	 */
-	title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)( 'Heading with Icon', 'nintynine' ),
-
-	/**
-	 * Block icon.
-	 *
-	 * @type {string}
-	 */
-	icon: 'admin-customizer',
-
-	/**
-	 * Block description.
-	 *
-	 * @type {string}
-	 */
-	description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)( 'Add Heading and select Icons', 'nintynine' ),
-
-	/**
-	 * Block category.
-	 *
-	 * @type {string}
-	 */
-	category: 'nintynine',
-
-	/**
-	 * Attributes.
-	 */
-	
-
-	edit() {
-		return '<div>Hello there</div>';
-	},
-	save() {
-		return '<div>Hello there2</div>';
-	},
-} );
 
 /***/ }),
 
@@ -187,7 +144,7 @@ var __webpack_exports__ = {};
   \**************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_blocks_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/blocks.scss */ "./src/sass/blocks.scss");
-/* harmony import */ var _gutenberg_blocks_heading_with_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../gutenberg/blocks/heading-with-icon */ "./src/gutenberg/blocks/heading-with-icon/index.js");
+/* harmony import */ var _gutenberg_blocks_heading_with_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gutenberg/blocks/heading-with-icon */ "./src/js/gutenberg/blocks/heading-with-icon/index.js");
 
 
 //Blocks
