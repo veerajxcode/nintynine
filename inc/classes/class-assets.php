@@ -59,11 +59,11 @@ class Assets {
 
         $asset_config = require_once $asset_config_file;
 
-        if ( empty( $asset_config['js/editor.js'] ) ) {
+        if ( empty( $asset_config['js/blocks.js'] ) ) {
 			return;
 		}
 
-        $editor_asset    = $asset_config['js/editor.js'];
+        $editor_asset    = $asset_config['js/blocks.js'];
 		$js_dependencies = ( ! empty( $editor_asset['dependencies'] ) ) ? $editor_asset['dependencies'] : [];
 		$version         = ( ! empty( $editor_asset['version'] ) ) ? $editor_asset['version'] : filemtime( $asset_config_file );
 

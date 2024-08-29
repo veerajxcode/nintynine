@@ -5,21 +5,40 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
+import { RichText } from '@wordpress/block-editor';
 
 
+import Edit from "./edit";
+import { getIconComponent } from './icons-map';
 
-/**
- * Register block type.
- */
-registerBlockType( 'nintynine-blocks/heading-with-icon', {
+registerBlockType( 'nintynine-blocks/nintynine-heading-icon', {
 	title: __( 'Heading with Icon', 'nintynine' ),
 	icon: 'admin-customizer',
+	description: __('Add heading and select icon', 'nintynine'),
 	category: 'nintynine',
-
-	edit() {
-		return <div>Hello there</div>;
+	attributes: {
+		option: {
+			type: 'string',
+			default: 'dos'
+		},
+		content: {
+            type: 'string',
+            source: 'html',
+            selector: 'h4',
+			default: __('Dos', 'nintynine')
+        },
 	},
-	save() {
-		return <div>Hello there2</div>;
+	edit: Edit,
+
+	save({attributes: {option, content} }) {
+		const HeadingIcon = getIconComponent( option );
+		return (
+			<div className="nintynine-icon-heading">
+				<span className="nintynine-icon-heading__heading">
+					<HeadingIcon/>
+				</span>
+				<RichText.Content tagName="h4" value={content}/>
+			</div>
+		)
 	},
 } );
