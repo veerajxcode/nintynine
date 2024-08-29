@@ -42,8 +42,9 @@ if( ! defined( 'NINTYNINE_BUILD_CSS_DIR_PATH' ) ){
 
 require_once NINTYNINE_DIR_PATH . '/inc/helpers/autoloader.php';
 require_once NINTYNINE_DIR_PATH . '/inc/helpers/template-tags.php';
+
 function nintynine_get_theme_instance() {
-\NINTYNINE_THEME\Inc\NINTYNINE_THEME::get_instance();
+   \NINTYNINE_THEME\Inc\NINTYNINE_THEME::get_instance();
 }
 
 nintynine_get_theme_instance();

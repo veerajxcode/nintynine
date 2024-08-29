@@ -27,8 +27,13 @@
 }
 
 /* stylelint-enable */
-/*@import "7-blocks/dos-and-donts";
-@import "7-blocks/quote";
+/* stylelint-disable */
+.nintynine-dos-and-donts .nintynine-dos-and-donts__list {
+  margin-left: 20px;
+}
+
+/* stylelint-enable */
+/*@import "7-blocks/quote";
 @import "7-blocks/button";*/
 
 /*# sourceMappingURL=blocks.css.map*/
