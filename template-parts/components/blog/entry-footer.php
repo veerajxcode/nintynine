@@ -19,11 +19,9 @@ if ( empty($article_terms) || ! is_array( $article_terms ) ) {
     <?php
     foreach ( $article_terms as $key => $article_term ) {
         ?>
-        <a href="<?php echo esc_url( get_term_link( $article_term ) ); ?>" class="entry-footer-link text-black-50">
-            <button class="btn border border-secondary mb-2 mr-2">
-                <?php echo esc_html( $article_term->name ); ?>
-            </button>
-        </a>
+        <a class="entry-footer-link text-black-50 btn border border-secondary mb-2 mr-2" href="<?php echo esc_url( get_term_link( $article_term ) ); ?>">
+				<?php echo esc_html( $article_term->name ); ?>
+		</a>
         <?php
     }
 

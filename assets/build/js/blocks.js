@@ -9,54 +9,65 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _icons_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icons-map */ "./src/js/gutenberg/blocks/heading-with-icon/icons-map.js");
+/* harmony import */ var _icons_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons-map */ "./src/js/gutenberg/blocks/heading-with-icon/icons-map.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
-var Edit = function Edit(_ref) {
-  var className = _ref.className,
-    attributes = _ref.attributes,
-    setAttributes = _ref.setAttributes;
+
+/**
+ * Edit
+ *
+ * @param {Object} props Props.
+ *
+ * @return {Object} Content.
+ */
+var Edit = function Edit(props) {
+  var className = props.className,
+    attributes = props.attributes,
+    setAttributes = props.setAttributes;
   var option = attributes.option,
     content = attributes.content;
-  var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_3__.getIconComponent)(option);
+  var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_0__.getIconComponent)(option);
   return /*#__PURE__*/React.createElement("div", {
     className: "nintynine-icon-heading"
   }, /*#__PURE__*/React.createElement("span", {
     className: "nintynine-icon-heading__heading"
-  }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-    tagName: "h4",
+  }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+    tagName: "h4" // The tag here is the element output and editable in the admin
+    ,
     className: className,
-    value: content,
-    onChange: function onChange(content) {
+    value: content // Any existing content, either from the database or an attribute default
+    ,
+    onChange: function onChange(contentVal) {
       return setAttributes({
-        content: content
+        contentVal: contentVal
       });
-    },
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...', 'nintynine')
-  }), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Block Settings', 'nintynine')
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select the icon', 'nintynine'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Controls icon selection', 'nintynine'),
+    } // Store updated content as a block attribute
+    ,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Heading…', 'nintynine') // Display this text before any content has been added by the user
+  }), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Block Settings', 'nintynine')
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RadioControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select the icon', 'nintynine'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Controls icon selection', 'nintynine'),
     selected: option,
     options: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dos', 'nintynine'),
+      label: 'Dos',
       value: 'dos'
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dont\'s', 'nintynine'),
+      label: "Dont's",
       value: 'donts'
     }],
-    onChange: function onChange(option) {
+    onChange: function onChange(optionVal) {
       setAttributes({
-        option: option
+        optionVal: optionVal
       });
     }
   }))));
@@ -105,14 +116,14 @@ var getIconComponent = function getIconComponent(option) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/js/gutenberg/blocks/heading-with-icon/edit.js");
-/* harmony import */ var _icons_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./icons-map */ "./src/js/gutenberg/blocks/heading-with-icon/icons-map.js");
+/* harmony import */ var _icons_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icons-map */ "./src/js/gutenberg/blocks/heading-with-icon/icons-map.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/js/gutenberg/blocks/heading-with-icon/edit.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
 /**
  * Heading with Icon block.
  *
@@ -123,10 +134,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('nintynine-blocks/nintynine-heading-icon', {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading with Icon', 'nintynine'),
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('nintynine-blocks/nintynine-heading-icon', {
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Heading with Icon', 'nintynine'),
   icon: 'admin-customizer',
-  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add heading and select icon', 'nintynine'),
+  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add heading and select icon', 'nintynine'),
   category: 'nintynine',
   attributes: {
     option: {
@@ -137,20 +149,20 @@ __webpack_require__.r(__webpack_exports__);
       type: 'string',
       source: 'html',
       selector: 'h4',
-      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dos', 'nintynine')
+      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dos', 'nintynine')
     }
   },
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
-  save: function save(_ref) {
-    var _ref$attributes = _ref.attributes,
-      option = _ref$attributes.option,
-      content = _ref$attributes.content;
-    var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_4__.getIconComponent)(option);
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: function save(props) {
+    var _props$attributes = props.attributes,
+      option = _props$attributes.option,
+      content = _props$attributes.content;
+    var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_0__.getIconComponent)(option);
     return /*#__PURE__*/React.createElement("div", {
       className: "nintynine-icon-heading"
     }, /*#__PURE__*/React.createElement("span", {
       className: "nintynine-icon-heading__heading"
-    }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+    }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText.Content, {
       tagName: "h4",
       value: content
     }));

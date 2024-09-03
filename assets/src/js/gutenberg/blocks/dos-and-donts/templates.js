@@ -1,10 +1,5 @@
 /**
  *  Get Block Column.
- *
- * @param {String} optionVal Option
- * @param {String} colClassName ClassName
- * @param {String} heading Heading
- * @return {Array} Block column.
  */
 const getBlockColumn = ( optionVal, colClassName, heading ) => {
 	return [

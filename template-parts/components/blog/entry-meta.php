@@ -8,7 +8,8 @@
  ?>
 
  <div class="entry-meta mb-3">
-    <?php nintynine_posted_on(); 
+    <?php 
+        nintynine_posted_on(); 
         nintynine_posted_by();
     ?>
 

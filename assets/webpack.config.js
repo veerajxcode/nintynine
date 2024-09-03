@@ -8,6 +8,7 @@ const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extrac
 
 const JS_DIR = path.resolve( __dirname, 'src/js' );
 const IMG_DIR = path.resolve( __dirname, 'src/img' );
+const LIB_DIR = path.resolve( __dirname, 'src/library' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
 
 const entry = {
@@ -15,6 +16,8 @@ const entry = {
     single: JS_DIR + '/single.js',
     editor: JS_DIR + '/editor.js',
     blocks: JS_DIR + '/blocks.js',
+    author: JS_DIR + '/author.js',
+	search: JS_DIR + '/search.js',
 };
 const output = {
     path: BUILD_DIR,

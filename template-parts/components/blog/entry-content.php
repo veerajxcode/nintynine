@@ -30,9 +30,12 @@
             ]
         );
     } else {
-        nintynine_the_excerpt();
-        printf( '<br>' );
-        echo nintynine_excerpt_more();
+        ?>
+		<div class="truncate-4">
+			<?php nintynine_the_excerpt( 200 ); ?>
+		</div>
+		<?php
+		echo nintynine_excerpt_more();
     }
 
     ?>

@@ -1,7 +1,7 @@
 /**
  * Do's and don'ts block.
  *
- * @package
+ * @package NintyNine
  */
 
 /**
