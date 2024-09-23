@@ -23,7 +23,7 @@ class Assets {
          */
         add_action( 'wp_enqueue_scripts', [$this, 'register_styles' ] );
         add_action( 'wp_enqueue_scripts', [$this, 'register_scripts' ] );
-        add_action( 'enqueue_block_assets', [$this, 'enqueue_editor_assets' ] );
+        add_action( 'init', [$this, 'enqueue_editor_assets' ] );
     }
 
     public function register_styles(){
